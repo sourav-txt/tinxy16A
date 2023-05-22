@@ -42,7 +42,7 @@ pwm1 512
 Backlog rule on system#boot do pwm1 512 endon; Rule 1 1
 ```
 
-This is good enough if you dont need external switch functionality. For external switch functionality , add these to console, this will ensure that by defualt the switch will wait for atleast a about half a second before turning off the relay
+This is good enough if you dont need external switch functionality. For external switch functionality , add these to console, this will ensure that by defualt the switch will wait for atleast a about half a second before turning off the relay, otherwise relay will flicker due to sinusoidal nature of input ac voltage at switch
 
 ```console
 SwitchDebounce 1009

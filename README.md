@@ -26,40 +26,37 @@ then again go to the tasmota home page,
 
 insert following template 
 
------------------------------------------------------------------------------------
+```console
 {"NAME":"Tnxy16A","GPIO":[32,0,0,0,160,224,0,0,288,0,416,0,0,0],"FLAG":0,"BASE":18}
------------------------------------------------------------------------------------
-
+```
 then go to console and type
 
--------------------------------------------------------------------------
+```console
 setoption15 0
 setoption68 0
 Pwmfrequency 1000
 Pwmrange 1023 
 pwm1 512
-
+```
+```console
 Backlog rule on system#boot do pwm1 512 endon; Rule 1 1
-
---------------------------------------------------------------------------
+```
 
 This is good enough if you dont need external switch functionality. For external switch functionality , add these to console, this will ensure that by defualt the switch will wait for atleast a about half a second before turning off the relay
 
--------------------------------------------------------------------------
+```console
 SwitchDebounce 1009
 SwitchMode 1
--------------------------------------------------------------------------
-
+```
 to set timezone to IST,go to console and type
 
--------------------------------------------------------------------------
+```console
 Timezone +5:30
--------------------------------------------------------------------------
+```
 
 #this will disable led blinking when mqtt or wifi connection error happens
-
--------------------------------------------------------------------------
+```console
 setoption31 1 
--------------------------------------------------------------------------
+```
 
 source : https://templates.blakadder.com/tinxy_1_node_16a.html
